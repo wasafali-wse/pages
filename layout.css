@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+body {
+    font-family: 'poppins',sans-serif;
+    color: #85859b;
+    font-size: 1rem;
+    font-weight: 300;
+}
+.header {
+    background: #fff;
+    height: 5rem;
+    width: 100%;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #9fafc9;
+    display: flex;                      /* Set up flexbox for the header */
+    align-items: center;                /* Vertically center items */
+    justify-content: space-between;      /* Space out header elements */
+    padding: 10px; 
+}
+.row {
+    display: flex;                      /* Setup flex layout for rows */
+    width: 100%;                        /* Make sure it fills the header */
+}
+.col-1, .col-4, .col-5, .col-1 {
+    display: flex;                      /* Allow flex in columns */
+    align-items: center;                /* Vertically center items within columns */
+}
+
+
+.logo {
+    background: transparent;
+    color: #3874ff;
+    /*font-family: 'poppins', sans-serif;*/
+    height: 2rem;
+    width: 15%;
+    padding: 10px;
+    margin: 0px;
+    font-weight: 300;
+}
+#fl-l {
+    float: left;
+}
+#fl-r {
+    float: right;
+}
+#icon {
+    font-size: 1.5rem;
+    color: #85859b;
+    padding: 15px;
+    margin: 10px;
+    margin-top: 15px;
+}
+.btn {
+    border: none;!important
+    margin: 5px;
+    padding: 5px;
+
+}
+.btn-pro {
+    border: none;
+    margin:0px;
+    padding: 10px;
+    top: 15px;
+    background-color: #85859b;
+    display: flex;
+    align-items: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.search-bar {
+    border: solid;
+    border-width: 2px;
+    border-color: #85859b;
+    width: 100%;
+    margin: 10px;
+    padding: 10px;
+    padding-left:35px ;
+    font-size: 1rem;
+    border-radius: 90px;
+    
+}
+.sidenav {
+    height: 90%;
+    width: 260px; /* Set width of the sidebar */
+    position: fixed; /* Make it fixed */
+    z-index: 1; /* Sit on top of other content */
+    background-color: transparent; /* Background color */
+    padding-top: 20px; /* Space at the top */
+    border-right: solid;
+    border-color: #85859b;
+    border-width: 1px;
+    overflow-y: auto;
+   
+}
+.sidenav-expand {
+    height: 90%;
+    width: 50px; /* Set width of the sidebar */
+    position: fixed; /* Make it fixed */
+    z-index: 1; /* Sit on top of other content */
+    background-color: transparent; /* Background color */
+    padding-top: 0px; /* Space at the top */
+    border-right: solid;
+    border-color: #85859b;
+    border-width: 1px;
+
+}
+a{
+    text-decoration: none;
+    padding: 0px;
+    margin:0px ;
+    width: 85%;
+    text-align: left;
+    color: #85859b; 
+}
+.sidebar-list  {
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+    padding: 5px;
+    margin:5px ;
+    width: 85%;
+    text-align: left;
+    color: #85859b;
+}
+.sidebar-list:hover {
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+
+    background-color: #f0f0f0;  
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.sidebar-list-but {
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+    padding: 5px;
+    margin:5px ;
+    width: 85%;
+    text-align: left;
+    color: #85859b;
+}
+.sidebar-list-but:hover {
+    text-decoration: none;
+    cursor: pointer;
+    list-style: none;
+
+    background-color: #f0f0f0;  
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.hide-show {
+    display: none; /* Initially hide the submenu */
+}
+
+
+.main {
+    margin-left: 250px; /* Adjust to prevent overlap with sidenav */
+    margin-top: 0px;
+    padding: 20px; /* Padding for content */
+    background-color: #f5f7fa;
+    height: 100%;
+    z-index: 0;
+    font-weight: 100;
+
+}
+.container-fluid {
+    height: 80vh;
+}

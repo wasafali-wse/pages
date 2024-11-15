@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.lineicons.com/4.0/lineicons.css" rel="stylesheet" />
+    <title>Purchase</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        /* Ensure full height for body */
+        
+    </style>
+</head>
+
+<body>
+
+<div class="wrapper">
+        <aside id="sidebar">
+            
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <span>Task</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-protection"></i>
+                        <span>Auth</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">Login</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">Register</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                        data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                        <i class="lni lni-layout"></i>
+                        <span>Multi Level</span>
+                    </a>
+                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                                data-bs-target="#multi-two" aria-expanded="false" aria-controls="
+                                multi-two">
+                                Two Links
+                            </a>
+                            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Link 1</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Link 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>      
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-popup"></i>
+                        <span>Notification</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-cog"></i>
+                        <span>Setting</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <i class="lni lni-exit"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+<!--now main content goes here -->
+
+<div class="main">
+    <div class="row">
+        <div class="col-1 ">
+        <button class="toggle-btn" type="button">
+            <i class="lni lni-menu-cheesburger"></i>
+
+        </button>
+        </div>
+        <div class="col-11">           
+            <h1 class="shadow">Purchase Entry</h1>
+        </div> 
+    </div>    
+    <form method="post" class="p-3 border rounded shadow-sm m-3">
+    {% csrf_token %}
+    <h2 class="mb-4 shadow p-2">Purchase Entry</h2>
+    
+    <div class="mb-3">
+        <label for="id_name" class="form-label">Customer Name:</label>
+        {{ customer_form.name|add_class:"form-control" }} <!-- Add Bootstrap class -->
+    </div>
+    
+    <div class="mb-3">
+        <label for="id_contact" class="form-label">Contact:</label>
+        {{ customer_form.contact|add_class:"form-control" }} <!-- Add Bootstrap class -->
+    </div>
+    
+    <h5>Items</h5>
+    <div id="item-container">
+        {% for form in purchase_forms %}
+            <div class="purchase-form mb-3 border rounded p-3">
+                <h6>Item {{ forloop.counter }}</h6>
+                <div class="row">
+                    <div class="col">
+                        <label for="id_item_{{ forloop.counter }}_qty" class="form-label">{{ form.qty.label }}</label><br>
+                        {{ form.qty|add_class:"form-control" }} <!-- Add Bootstrap class -->
+                    </div>
+                    <div class="col">
+                        <label for="id_item_{{ forloop.counter }}_description" class="form-label">{{ form.description.label }}</label><br>
+                        {{ form.description|add_class:"form-control" }} <!-- Add Bootstrap class -->
+                    </div>
+                    <div class="col">
+                        <label for="id_item_{{ forloop.counter }}_amount" class="form-label">{{ form.amount.label }}</label><br>
+                        {{ form.amount|add_class:"form-control" }} <!-- Add Bootstrap class -->
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="id_item_{{ forloop.counter }}_status" class="form-label">{{ form.status.label }}</label><br>
+                        {{ form.status|add_class:"form-control" }} <!-- Add Bootstrap class -->
+                    </div>
+                    <div class="col">
+                        <label for="id_item_{{ forloop.counter }}_delivery" class="form-label">{{ form.delivery.label }}</label><br>
+                        {{ form.delivery|add_class:"form-control" }} <!-- Add Bootstrap class -->
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <input type="hidden" name="items_count" id="items_count" value="{{ purchase_forms|length }}">
+    
+    <button type="button" class="btn btn-secondary shadow-sm" onclick="addItem()">Add Another Item</button>
+    <button type="submit" class="btn btn-primary shadow-sm">Submit</button>
+</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+<!-- this is the end of the page -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script_layout.js"></script>
+</body>
+
+</html>

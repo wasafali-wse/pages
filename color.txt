@@ -1,0 +1,28 @@
+green #c6ff00
+grey #263238
+ 
+blogs top ten solar companies in world
+blogs top solar inverters in pakistan 
+blogs top programming languages
+blogs top programming learning platforms
+blogs how to read resistor color code
+blogs how to read smd number code 
+blogs how to install plc softwares
+blogs hot make programming cables
+
+
+color schema for web page 
+
+
+white #fff
+main background #f5f7fa
+font color #9fafc9 #85859b
+navy-blue #182744
+dark-blue #3874ff
+hover-blue #0599eb
+light0-green #90d67f
+dark-green #25b003
+off-white #ffefca
+dark-white #e88621
+light-red #ffe0db
+dark-red #f48270

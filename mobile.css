@@ -1,0 +1,134 @@
+@media (max-width: 767.98px) {
+    /* Decrease text size for mobile devices */
+    body {
+        font-size: 10px; /* Adjust base font size */
+    }
+
+
+    h1 {
+        font-size: 18px;
+        padding: 5px; /* Example: smaller h1 size */
+    }
+
+    ul {
+        font-size: 12px; /* Smaller size for list items */
+    }
+
+    li {
+        font-size: 12px; /* Smaller size for individual list items */
+    }
+
+    table {
+        font-size: 0.8rem; /* Smaller size for table elements */
+    }
+    th,td {
+        font-size: 12px;
+        padding: 2px;
+
+    }
+    #filter-form .form-control,
+    #filter-form .form-select {
+        font-size: 12px;        /* Set desired font size */
+        padding: 0.5rem;   
+        width: 90%; 
+        box-sizing: border-box;     /* Set padding */
+    }
+
+    /* Style the col elements if needed */
+    #filter-form .col-md-3 {
+        padding-left: 0;       /* Remove left padding */
+        padding-right: 0;      /* Remove right padding */
+    }
+    
+    /* You can also adjust the full width of form controls on smaller screens */
+    #filter-form .row.g-2 {
+        margin-left: 0;        /* Remove left margin */
+        margin-right: 0;       /* Remove right margin */
+    }
+    
+    /* Adjust the form margin if needed */
+    #filter-form {
+        margin-bottom: 0.8rem;   /* Example of bottom margin if necessary */
+    }
+    #table-container {
+        width: 90%;
+
+    }
+    #sidebar{
+        width: 50px;
+        min-width: 50px;
+    }
+    #sidebar.expand {
+        width: 200px;
+        min-width: 200px;
+    }
+    .table-container {
+    max-height: 380px; /* Max height for scrolling */
+    overflow-y: auto; /* Vertical overflow */
+    border: 1px solid #ccc; 
+    border-radius: 0.375rem; /* Rounded corners */
+    }
+    
+    .sidebar-logo {
+        margin: 1rem;
+    }
+
+    .sidebar-logo a {
+        color: #FFF;
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .sidebar-nav {
+    padding-right: 0px ;
+    flex: 1 1 auto;
+    }
+    a.sidebar-link {
+        padding: .625rem .625rem;
+        color: #FFF;
+        display: block;
+        font-size: 0.9rem;
+        white-space: nowrap;
+        border-left: 3px solid transparent;
+    }
+
+    .sidebar-link i {
+        font-size: 1.1rem;
+        margin-right: .5rem;
+    }
+
+    a.sidebar-link:hover {
+        background-color: rgba(255, 255, 255, .075);
+        border-left: 3px solid #3b7ddd;
+    }
+    .toggle-btn {
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 1rem 1rem;
+    }
+
+    .toggle-btn i {
+        font-size: 1.5rem;
+        color: #FFF;
+    }
+
+    header {
+        position: absolute;
+        
+        width: 100%;
+        left: 0;
+    }
+    #main-logo {
+        font-size: 1.5rem;
+    }
+    #main-sub-logo {
+        font-size: 0.6rem;
+    }
+    i {
+        font-size: 1.5rem;
+    }
+    
+}
+
+
+    /* Other elements can be adjusted as necessary */
