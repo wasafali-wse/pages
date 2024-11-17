@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            margin: 0;
+            height: 100vh; /* Keep full height */
+            /*background-image: url('img/header-image.svg');
+            background-size: cover;  Cover the entire viewport 
+            background-position: center; 
+            background-repeat:no-repeat ;
+        */
+        }
+        .header {
+            top: 0px;
+            position: relative; /* Position it relative to the body */
+            z-index: 1;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for visibility */
+            padding: 20px; /* Added padding for spacing */
+            color: white; /* Change text color for visibility */
+        }
+
+        .divider:after,
+        .divider:before {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: #eee;
+            }
+            .h-custom {
+            height: calc(100% - 73px);
+            }
+            @media (max-width: 450px) {
+            .h-custom {
+            height: 100%;
+            }
+        }
+        .heading {
+            font-weight: 300;
+            font-size: 3rem;
+            color: white;
+        }
+        .para {
+        	font-size: 1.1rem ;
+        	color: white;
+        	padding: 40px;
+        }
+
+
+        .power {
+        	font-size: 0.9rem;
+        }
+
+        .nav {
+            display: flex; /* Use flexbox */
+            justify-content: flex-end; /* Align navigation to the right */
+            align-items: center;
+            padding-top: 15px; /* Center align items vertically */
+        }
+
+        .nav ul {
+            padding: 0;
+            list-style: none; /* Remove bullets */
+            display: flex; /* Use flexbox for nav items */
+        }
+
+        .nav ul li {
+            margin-left: 15px; /* Space between nav links */
+            font-size: 1.5rem;
+        }
+
+        .nav a {
+            color: #fff; /* Change to white */
+            padding: 10px 15px; /* Padding around links */
+            border-radius: 25px;
+            text-decoration: none;
+            transition: background-color 0.5s;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Hover effect */
+        }
+        .btn:hover {
+        	border-color: white;
+        	color: white;
+        	background-color: black;
+        	border-width: 3px;
+        	transition: 0.5s;
+        }
+        .footer {
+		    background-color:rgba(0, 0, 0, 0.5); /* Dark background (similar to a header) */
+		    color: white;              /* White text for contrast */
+		    padding: 0px;            /* Consistent padding as header */
+		    text-align: center;       /* Centered text */
+		}
+
+		.footer-content {
+		    max-width: 1200px;        /* Maximum width for responsiveness */
+		    margin: 0 auto;           /* Center alignment */
+		}
+
+		.footer p {
+		    margin: 10px 0;           /* Margin top and bottom for space */
+		}
+
+
+
+        main {
+            padding: 20px; /* Padding inside the main section for spacing */
+        }
+
+        button {
+            margin: 10 10px;
+            font-size: 1.5rem;
+            height: 50px; /* Space buttons a bit */
+            width: 50%;
+        }
+        .button-container {
+		    display: flex;        /* Enables flexbox layout */
+		    justify-content: center; /* Centers the buttons horizontally */
+		    gap: 10px;           /* Optional: Adds space between buttons */
+		    align-items: center;
+
+		}
+
+        @media (max-width: 768px) {
+            body {
+                font-size: 1.5rem; /* Smaller font size on mobile */
+            }
+
+            .heading {
+                font-size: 1.5rem; /* Smaller heading */
+            }
+
+            .nav ul {
+                flex-direction: column; /* Stack items vertically on small screens */
+                align-items: center; /* Center align the items */
+            }
+
+            .nav ul li a {
+                margin: 5px 0; /* Vertical margin */
+            }
+        }
+    </style>
+    <title>register</title>
+</head>
+<body>
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="img/register.svg"
+              class="img-fluid" alt="Sample image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form>
+              <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
+                <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+                  <i class="fab fa-twitter"></i>
+                </button>
+
+                <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-floating mx-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </button>
+              </div>
+
+              <div class="divider d-flex align-items-center my-4">
+                <p class="text-center fw-bold mx-3 mb-0">Or</p>
+              </div>
+              <!-- Nmae Input  -->
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="text" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter your Name" />
+                <label class="form-label" for="form3Example3">Name</label>
+              </div>
+              <!-- Email input --> 
+              <div data-mdb-input-init class="form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control form-control-lg"
+                  placeholder="Enter a valid email address" />
+                <label class="form-label" for="form3Example3">Email address</label>
+              </div>
+
+              <!-- Password input -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                  placeholder="Enter password" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+              <!-- re enter passowrd  -->
+              <div data-mdb-input-init class="form-outline mb-3">
+                <input type="password" id="form3Example4" class="form-control form-control-lg"
+                  placeholder="Confirm password" />
+                <label class="form-label" for="form3Example4">Confirm Password</label>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- Checkbox -->
+              
+                <a href="#!" class="text-body">Forgot password?</a>
+              </div>
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Register</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Already have an account? <a href="#!"
+                    class="link-danger">Login</a></p>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+          &copy;  copyright 2000-2024 WAHEEDSONS ENGINEERING&reg. All Rights Reserved.
+        </div>
+        <!-- Copyright -->
+
+        <!-- Right -->
+        <div>
+          <a href="#!" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#!" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#!" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#!" class="text-white">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </div>
+    </section>
+
+
+
+    
+    <!-- <footer class="footer">
+	    <div class="footer-content">
+	        <p class="para"></p>
+	    </div>
+	</footer> -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
