@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Video Overlay</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            height: 100%;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            background-color: black; /* Black background for the div */
+            position: fixed; /* Fixed position when scrolling */
+            width: 100%; /* Full width */
+            left: 0; /* Aligns to the left */
+            transition: all 0.3s ease; /* Smooth transition */
+            z-index: 1000; /* Keep it on top */
+        }
+
+        .logo {
+            position: relative;
+            width: 100%; /* Make the logo responsive */
+        }
+
+        .transparent-logo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Make the logo fit the video */
+            height: 100%; /* Make the logo fit the video */
+            object-fit: contain; /* Adjust the logo fit */
+            pointer-events: none; /* So clicks go through the logo */
+        }
+
+        .video-background {
+            position: relative;
+            width: 100%; /* Adjust based on your design */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        /* Shrink state */
+        .shrink {
+            height: 80px; /* Desired height when shrunk */
+            width: 80px; /* Desired width when shrunk */
+            top: 20px; /* Adjust as necessary */
+            left: calc(50% - 40px); /* Center the small logo */
+            transition: all 0.3s ease; /* Smooth transition */
+            z-index: 1000; /* Stay on top */
+        }
+
+        /* Additional content to enable scrolling */
+        .content {
+            padding-top: 100vh; /* Space for the fixed container */
+            height: 2000px; /* Enough height to enable scrolling */
+            background: linear-gradient(white, lightgray); /* A gradient background to indicate content */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="logo">
+            <video class="video-background" autoplay loop muted>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <img src="logo.png" alt="Logo" class="transparent-logo">
+        </div>
+    </div>
+
+    <div class="content">
+        <h1 style="text-align: center; margin-top: 20px;">Scroll Down for More Content</h1>
+        <p style="text-align: center;">This area is just for demonstration. Add more content here to see the scroll effect.</p>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 0) {
+                container.classList.add('shrink'); // Add shrink class on scroll
+            } else {
+                container.classList.remove('shrink'); // Remove shrink class at the top
+            }
+        });
+    </script>
+</body>
+
+</html>
